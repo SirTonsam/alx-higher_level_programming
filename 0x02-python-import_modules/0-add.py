@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
+
 # Import the add function from the add_0.py file
+from py_compile import main
 from add_0 import add
 
 # Assign the value 1 to a variable called a
@@ -14,3 +16,7 @@ result = add(a, b)
 
 # Print the result of the addition
 print(f"{a} + {b} = {result}")
+
+if __name__ == "__main__":
+    main()
+
