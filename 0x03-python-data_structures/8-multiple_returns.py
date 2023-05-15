@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def multiple_returns(sentence):
     length = len(sentence)  # Get the length of the sentence
     
@@ -7,4 +8,3 @@ def multiple_returns(sentence):
         first = sentence[0]  # Get the first character of the sentence
     
     return length, first  # Return the length and first character as a tuple
-
