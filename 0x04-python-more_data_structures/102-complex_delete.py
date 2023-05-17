@@ -9,3 +9,15 @@ def complex_delete(a_dictionary, value):
         del a_dictionary[key]
 
     return a_dictionary
+
+
+def print_sorted_dictionary(dictionary):
+    for key in sorted(dictionary):
+        print("{}: {}".format(key, dictionary[key]))
+
+
+a_dictionary = {'lang': "C", 'track': "Low", 'pref': "C", 'ids': [1, 2, 3]}
+new_dict = complex_delete(a_dictionary, 'C')
+print_sorted_dictionary(a_dictionary)
+print("--")
+print_sorted_dictionary(new_dict)
