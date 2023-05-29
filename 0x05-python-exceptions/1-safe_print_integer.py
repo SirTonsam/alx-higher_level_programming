@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 
-def safe_print_integer(value):
+#!/usr/bin/python3
+def safe_print_list(my_list=[], x=0):
+    count = 0
     try:
-        # Try to print the value as an integer using "{:d}".format()
-        print("{:d}".format(value))
-        return True  # Return True if printing is successful
-    except (ValueError, TypeError):
-        # Catch ValueError or TypeError exceptions if value is not an integer
-        return False  # Return False if printing fails
+        for i in range(x):
+            print(my_list[i], end="")
+            count += 1
+    except IndexError:
+        pass
+    finally:
+        print()
+        return count
