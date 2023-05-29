@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
 def safe_print_list_integers(my_list=[], x=0):
-    count = 0  # Initialize a variable to keep track of the number of integers printed
+    count = 0
     try:
-        for i in range(x):  # Iterate over the first x elements of the list
-            if isinstance(my_list[i], int):  # Check if the element is an instance of int
-                print("{:d}".format(my_list[i]), end="")  # Print the integer without a new line
-                count += 1  # Increment the count of integers printed
+        for i in range(x):
+            if isinstance(my_list[i], int):
+                print("{:d}".format(my_list[i]), end="")
+                count += 1
     except IndexError:
-        pass  # Catch the IndexError if x is greater than the length of the list
+        pass
     finally:
-        print()  # Print a new line
-        return count  # Return the count of integers printed
+        print()
+        return count
