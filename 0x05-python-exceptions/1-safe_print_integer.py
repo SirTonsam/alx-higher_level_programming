@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def safe_print_integer(value):
     try:
         # Try to print the value as an integer using "{:d}".format()
