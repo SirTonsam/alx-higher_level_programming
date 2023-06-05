@@ -39,13 +39,15 @@ class Rectangle:
 
     def __str__(self):
         """Return a string representation of the Rectangle."""
-        return ("{'_Rectangle__height': " + str(self.__height) +
-                ", '_Rectangle__width': " + str(self.__width) + "}")
+        return (
+            "{'_Rectangle__height': " + str(self.__height) +
+            ", '_Rectangle__width': " + str(self.__width) + "}"
+        )
 
 
 my_rectangle = Rectangle(2, 4)
-print(my_rectangle)  # Output: {'_Rectangle__height': 4, '_Rectangle__width': 2}
+print(my_rectangle)  # Output: {'_Rec__he': 4, '_Rec__width': 2}
 
 my_rectangle.width = 10
 my_rectangle.height = 3
-print(my_rectangle)  # Output: {'_Rectangle__height': 3, '_Rectangle__width': 10}
+print(my_rectangle)  # Output: {'_Rec__height': 3, '_Rec__width': 10}
