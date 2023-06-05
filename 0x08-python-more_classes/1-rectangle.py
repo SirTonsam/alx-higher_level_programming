@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Defines a Rectangle class."""
+
+
 class Rectangle:
     """Represent a rectangle."""
 
@@ -5,11 +9,11 @@ class Rectangle:
         """Initialize a new Rectangle.
 
         Args:
-            width (int): The width of the new rectangle. Defaults to 0.
-            height (int): The height of the new rectangle. Defaults to 0.
+            width (int): The width of the new rectangle.
+            height (int): The height of the new rectangle.
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -36,18 +40,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    def __str__(self):
-        """Return a string representation of the Rectangle."""
-        return (
-            "{'_Rectangle__height': " + str(self.__height) +
-            ", '_Rectangle__width': " + str(self.__width) + "}"
-        )
-
-
-my_rectangle = Rectangle(2, 4)
-print(my_rectangle)  # Output: {'_Rec__he': 4, '_Rec__width': 2}
-
-my_rectangle.width = 10
-my_rectangle.height = 3
-print(my_rectangle)  # Output: {'_Rec__height': 3, '_Rec__width': 10}
