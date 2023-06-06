@@ -41,7 +41,7 @@ def get_solution(chessboard):
     for row in range(len(chessboard)):
         for col in range(len(chessboard)):
             if chessboard[row][col] == "Q":
-                solution.append([row, col])
+                solution.append([row + 1, col + 1])
                 break
     return solution
 
@@ -78,15 +78,4 @@ def mark_attacked_positions(chessboard, row, col):
         c += 1
     # Mark all spots diagonally up to the left
     c = col - 1
-    for r in range(row - 1, -1, -1):
-        if c < 0:
-            break
-        chessboard[r][c] = "x"
-        c -= 1
-    # Mark all spots diagonally up to the right
-    c = col + 1
-    for r in range(row - 1, -1, -1):
-        if c >= len(chessboard):
-            break
-        chessboard[r][c] = "x"
-        c += 1
+    for r in range(row - 1, -1
