@@ -1,9 +1,14 @@
 #!/usr/bin/node
-// function that returns the number of occurrences in a list
+const dictInput = require('./101-data').dict;
+const outDict = {};
 
-const originalList = require('./100-data').list;
-console.log(originalList);
-const mappedList = originalList.map (function (e, index) {
-  return (e * index);
-});
-console.log(mappedList);
+for (const key in dictInput) {
+  const ocurr = dictInput[key];
+  outDict[ocurr] = [];
+  for (const keys in dictInput) {
+    if (dictInput[keys] === ocurr) {
+      outDict[ocurr].push(keys);
+    }
+  }
+}
+console.log(outDict);
