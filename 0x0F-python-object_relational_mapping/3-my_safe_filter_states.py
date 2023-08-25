@@ -1,21 +1,25 @@
 #!/usr/bin/python3
-"""
-Filter states by user input safe from MySQL injections!
-"""
+
+""" Module that lists all states from the database hbtn_0e_0_usa """
 
 import MySQLdb
-from sys import argv
-
+import sys
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost",
-                         user=argv[1], passwd=argv[2], db=argv[3])
-    query = "SELECT * FROM states\
-             WHERE states.name = %s\
-             ORDER BY states.id ASC"
-    cursor = db.cursor()
-    cursor.execute(query, (argv[4], ))
-    for state in cursor.fetchall():
-        print(state)
-    cursor.close()
+    """ Connection to a MySQL server """
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=sys.argv[1], passwd=sys.argv[2],
+                         db=sys.argv[3], charset="utf8")
+    """ To obtain a Cursor object """
+    cur = db.cursor()
+    """ Executing queries """
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
+                (sys.argv[4],))
+    """ Obtaining query results """
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        print(row)
+    """ Close cursor """
+    cur.close()
+    """ Close connection """
     db.close()
